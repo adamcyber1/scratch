@@ -8,9 +8,27 @@ yes | sudo apt-get install bpfcc-tools linux-headers-$(uname -r) # https://githu
 yes | sudo apt install iperf
 yes | sudo apt-get install linux-tools-common linux-tools-generic linux-tools-`uname -r`
 yes | sudo apt install nicstat
+sudo apt-get install -y bpftrace
+```
 
+https://github.com/iovisor/bcc
+https://github.com/iovisor/bpftrace/blob/master/INSTALL.md#ubuntu
+
+
+
+
+# Install Ebpf
+
+```bash
+cd /tmp/ && git clone https://github.com/iovisor/bcc.git && cd /tmp/bcc/ 
+
+
+sudo apt install bpftrace-dbgsym # https://wiki.ubuntu.com/Debug%20Symbol%20Packages
+
+sudo ln -s /usr/bin/bpftrace /usr/local/bin/bpftrace
 
 ```
+
 
 
 # Enable enhanced networking 
@@ -32,9 +50,4 @@ supports-register-dump: no
 supports-priv-flags: no
 ```
 
-# Connect
-
-```bash
-ssh -i "/path/to/pem" username@url
-```
 
